@@ -43,7 +43,7 @@ function Register ({onRouteChange, loadUser, user}) {
         <main className="pa4 black-80">
         <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <legend className="f2 fw6 ph0 mh0 center">Register Form</legend>
+            <legend className="f2 fw6 ph0 mh0 center">Register  Form</legend>
             <div className="mt3">
                 <label className="db fw6 lh-copy f6" htmlFor="email-address">Name</label>
                 <input onChange = {handleNameChange} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-170" type="text" name="name"  id="name" />

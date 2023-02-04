@@ -24,12 +24,14 @@ function Signin ({onRouteChange, loadUser}) {
             })
         })
         .then(resp => resp.json())
+        //.then(resp => console.log(resp))
         .then(user => {
+            console.log(user);
             if (user.id) {
+                console.log()
                 loadUser(user)
                 console.log(user)
                 onRouteChange("home")
-                
             }
         })
     }
