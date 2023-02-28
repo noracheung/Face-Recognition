@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function Register ({onRouteChange, loadUser, user}) {
-    const [registerEmail, setRegisterEmail] = useState("");
+    const [registerEmail, setRegisterEmail] = useState("");     //"" = initial state of state
     const [registerPassword, setRegisterPassword] = useState("");
     const [registerName, setRegisterName] = useState("");
 
@@ -18,7 +18,7 @@ function Register ({onRouteChange, loadUser, user}) {
     }
 
     const handleRegisterSubmit = () => {
-        fetch("http://localhost:2000/register", {
+        fetch("https://face-recognition-api-7dx7.onrender.com/register", {
             method: "post", 
             headers: {"Content-Type": "application/json"}, 
             body: JSON.stringify({
@@ -31,7 +31,7 @@ function Register ({onRouteChange, loadUser, user}) {
         .then(user => {
            if (user.id) {
                 loadUser(user);
-                onRouteChange("home");
+                onRouteChange("home"); //handleRouteChange("home")in App.js, onRouteChange={handleRouteChange}
             }
 
         }) 
@@ -43,7 +43,7 @@ function Register ({onRouteChange, loadUser, user}) {
         <main className="pa4 black-80">
         <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <legend className="f2 fw6 ph0 mh0 center">Register  Form</legend>
+            <legend className="f2 fw6 ph0 mh0 center">Register Form</legend>
             <div className="mt3">
                 <label className="db fw6 lh-copy f6" htmlFor="email-address">Name</label>
                 <input onChange = {handleNameChange} className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-170" type="text" name="name"  id="name" />
@@ -62,6 +62,7 @@ function Register ({onRouteChange, loadUser, user}) {
                     className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
                     type="submit" value="register" />
             </div>
+            <p>It may take a few seconds. <br/>Please be patient!</p>
         </div>
         </main>
      </article>

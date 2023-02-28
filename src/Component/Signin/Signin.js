@@ -15,7 +15,7 @@ function Signin ({onRouteChange, loadUser}) {
 
     const handleSubmitSignIn = () => {
         //console.log(signInEmail, signInPassword)
-        fetch("http://localhost:2000/signin", {
+        fetch("https://face-recognition-api-7dx7.onrender.com/signin", {
             method: "post",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
@@ -60,6 +60,7 @@ function Signin ({onRouteChange, loadUser}) {
             <div className="lh-copy mt3">
             <a href="#0" onClick = {() => onRouteChange("register")}className="f6 link dim black db">Register</a>
             </div>
+            <p>It may take a few seconds. <br/>Please be patient!</p>
         </div>
         </main>
      </article>
